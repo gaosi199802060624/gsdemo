@@ -43,6 +43,7 @@ header{
     background: #fff;
     margin: 0 auto;
     display: flex;
+    position: relative;
 }
 
 .list-lef{
@@ -71,6 +72,10 @@ header{
 .list-lef>ul>li>a>span{
     margin-left: 50px;
 }
+.list-show{
+    display: none;
+}
+
 .on{
     background: #ff6577;
     color: white;

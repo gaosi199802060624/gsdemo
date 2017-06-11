@@ -6,6 +6,17 @@
     <script src="angular/angular.js"></script>
     <script src="angular/angular-route.min.js"></script>
     <script src="app.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/dangqi.js"></script>
+    <script src="js/dianpu.js"></script>
+    <script src="js/fenxiang.js"></script>
+    <script src="js/fuwu.js"></script>
+    <script src="js/kepian.js"></script>
+    <script src="js/mingxi.js"></script>
+    <script src="js/yilan.js"></script>
+    <script src="js/yitong.js"></script>
+    <script src="js/youke.js"></script>
+    <script src="route/route.js"></script>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="bootstrap-安装包/css/bootstrap.css">
 </head>
@@ -27,34 +38,28 @@
            <div class="list-lef">
                <ul id="ulst">
                    <li><a href="#index"><img src="img/04.jpg" alt="">首页</a></li>
-                   <li><a class="list-click" href="#dianpu"><img src="img/1.gif" alt="">店铺管理<span><img src="img/4.png" alt=""></span></a>
-                       <ul class="list-show">
-                           <li><a href="#shanghu">商户信息</a></li>
-                           <li><a href="#shanghu">商家作品</a></li>
-                           <li><a href="#shanghu">套系管理</a></li>
+                   <li><a class="list-click" href="#dianpu"><img src="img/1.gif" alt="">店铺管理<span><img src="img/4.png" alt=""></span></a><ul class="list-show">
+
                        </ul>
                    </li>
-                   <li><a class="list-click" href="#fuwu"><img src="img/2.gif" alt="">服务管理<span><img src="img/4.png" alt=""></span></a>
-                       <ul class="list-show">
-                           <li><a href="#shanghu">商户信息</a></li>
-                           <li><a href="#shanghu">商家作品</a></li>
-                           <li><a href="#shanghu">套系管理</a></li>
+                   <li><a class="list-click" href="#fuwu"><img src="img/2.gif" alt="">服务管理<span><img src="img/4.png" alt=""></span></a><ul class="list-show">
+                           <li><a href="#shanghu1">所有订单</a></li>
+                           <li><a href="#shanghu2">摄影未排期</a></li>
+                           <li><a href="#shanghu3">试衣排期</a></li>
+                           <li><a href="#shanghu8">已完成订单</a></li>
+                           <li><a href="#shanghu9">已退单</a></li>
+                           <li><a href="#shanghu10">数据备份</a></li>
                        </ul>
                    </li>
                    <li><a href="#kepian"><img src="img/3.gif" alt="">客片管理</a></li>
-                   <li><a class="list-click" href="#dangqi"><img src="img/4.gif" alt="">档期管理<span><img src="img/4.png" alt=""></span></a>
-                       <ul class="list-show">
+                   <li><a class="list-click" href="#dangqi"><img src="img/4.gif" alt="">档期管理<span><img src="img/4.png" alt=""></span></a><ul class="list-show">
                            <li><a href="#yilan">档期一览</a></li>
                            <li><a href="#mingxi">档期明细</a></li>
                        </ul>
                    </li>
                    <li><a href="#fenxiang"><img src="img/5.gif" alt="">分享统计</a></li>
-                   <li><a href="#qianke"><img src="img/18.jpg" alt="">潜客管理</a></li>
-                   <li><a class="list-click" href="#xitong"><img src="img/7.gif" alt="">系统设置<span><img src="img/4.png" alt=""></span></a>
-                       <ul class="list-show">
-                           <li><a href="#shanghu">商户信息</a></li>
-                           <li><a href="#shanghu">商家作品</a></li>
-                           <li><a href="#shanghu">套系管理</a></li>
+                   <li><a href="#youke"><img src="img/18.jpg" alt="">游客管理</a></li>
+                   <li><a class="list-click" href="#xitong"><img src="img/7.gif" alt="">系统设置<span><img src="img/4.png" alt=""></span></a><ul class="list-show">
                        </ul>
                    </li>
                </ul>
@@ -78,20 +83,24 @@
     var oContent = document.getElementById("content");
     var oView = document.getElementById("view");
     oContent.style.height = oView.offsetHeight+"px";
-
     var aList = document.getElementsByClassName("list-click");
     var aShow = document.getElementsByClassName("list-show");
 
+    var flag=true;
     for(var i = 0;i<aList.length;i++){
-        aList[i].index = i;
-        aList[i].onclick = function () {
-            for(var i = 0;i<aList.length;i++){
-                aList[i].className = "";
-                aShow[i].style.display = "none";
+        (function (i) {
+
+            aList[i].onclick = function () {
+                if(flag){
+                    aList[i].nextSibling.style.display="block";
+                    flag=false
+                }else {
+                    aList[i].nextSibling.style.display="none";
+                    flag=true
+                }
             }
-            this.className = "on";
-            aShow[this.index].style.display = "block";
-        }
+        })(i)
+
 
     }
 
