@@ -4,6 +4,8 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: "微软雅黑";
+    color: #333333;
 }
 
 header{
@@ -29,7 +31,7 @@ header{
     right:255px;
 }
 .hea-rig span{
-    margin-left:2px;
+    margin-left:1px;
 }
 .content{
     width: 1366px;
@@ -56,7 +58,7 @@ header{
 }
 .list-lef>ul>li{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .list-lef>ul>li>a{
     display: inline-block;
@@ -74,6 +76,7 @@ header{
 }
 .list-show{
     display: none;
+    margin-left: 23px;
 }
 
 .on{
@@ -88,19 +91,10 @@ header{
     position: absolute;
     left: 20%;
 }
-.view-top{
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid #cccccc;
-}
 .view-top>p{
-    font-size: 17px;
+    margin-top:21px;
     margin-left: 20px;
-}
-.list-show{
-    margin-left: 33px;
-    display: none;
+    font-size: 15px;
 }
 .list-show a {
     color: black;

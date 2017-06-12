@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        *{
+            font-family: "微软雅黑";
+        }
         li{
             list-style: none;
         }
@@ -21,19 +24,63 @@
         }
         .ins-rig ul li{
             width: 144px;
-            height: 155px;
-            margin-left:22px;
+            height: 130px;
+            margin-left:18px;
         }
         .ins-rig ul li img{
             width: 144px;
             height:107px;
         }
+        .top{
+            margin-bottom: 45px;
+            position: relative;
+        }
+        .top p{
+            position: absolute;
+            left:0;
+        }
+        .top img{
+            width: 70px;
+            height:30px;
+            position: absolute;
+            right:35px;
+        }
+        .center{
+            margin-bottom: 20px;
+        }
+        .txt{
+            color: #7ae7a8;
+        }
+      .center a{
+          color: #bbbbbb;
+      }
+        .center button{
+            font-size: 10px;
+            outline: none;
 
+        }
     </style>
 </head>
 <body>
 
 <div class="ins-rig">
+    <div class="top">
+        <p>客片管理</p>
+        <img src="img/11.png" alt="">
+    </div>
+    <div class="center">
+        <a href="#">订单号:</a>
+        <span>1000001</span>
+        <a href="#">订单类型:</a>
+        <span>婚纱</span>
+        <a href="#">客户姓名:</a>
+        <span>Kinson</span>
+        <a href="#">练习方式:</a>
+        <span>1392920006</span>
+        <a href="#">确认状态:</a>
+        <span class="txt">已发送</span>
+        <button>再次发送</button>
+    </div>
     <ul>
         <li>
             <img src="img/img_03.gif" alt="">
